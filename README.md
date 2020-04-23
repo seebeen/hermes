@@ -6,7 +6,7 @@
 
 Theme module which contains a collection of sub-modules to add or apply frontend and backend modifications.
 
-Hermes is based on [roots/hermes](https://github.com/roots/hermes), and basically provides a drop-in replacement for it.
+Hermes is based on [roots/soil](https://github.com/roots/soil), and basically provides a drop-in replacement for it.
 
 ## Installation
 
