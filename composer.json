@@ -1,0 +1,24 @@
+{
+    "name": "sgi/hermes",
+    "description": "Theme Addon based on soil which enables you to cleanup many unneeded WP things.",
+    "keywords": [
+        "wordpress",
+        "cleanup",
+        "module"
+    ],
+    "homepage": "https://sgi.io/wordpress/hermes",
+    "license": "GPL-2.0-only",
+    "authors": [
+        {
+            "name": "Sibin Grasic",
+            "email": "sg@sgi.io",
+            "homepage": "https://sgi.io"
+        }
+    ],
+    "type": "wordpress-plugin",
+    "autoload": {
+        "psr-4": {
+            "SGI\\WP\\": "src/"   
+        }
+    }
+}
