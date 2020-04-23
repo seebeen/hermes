@@ -1,5 +1,9 @@
 # Hermes
 
+[![Latest Stable Version](https://poser.pugx.org/sgi/hermes/v/stable)](https://packagist.org/packages/sgi/hermes) 
+[![Total Downloads](https://poser.pugx.org/sgi/hermes/downloads)](https://packagist.org/packages/sgi/hermes)
+[![License](https://poser.pugx.org/sgi/hermes/license)](https://packagist.org/packages/sgi/hermes)
+
 Theme module which contains a collection of sub-modules to add or apply frontend and backend modifications.
 
 Hermes is based on [roots/hermes](https://github.com/roots/hermes), and basically provides a drop-in replacement for it.
