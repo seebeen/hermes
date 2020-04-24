@@ -1,6 +1,6 @@
 <?php
 
-namespace SGI\WP\Hermes;
+namespace SGI\WP\Hermes\Module;
 
 class Media
 {
