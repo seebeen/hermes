@@ -21,9 +21,20 @@ class Assets
         if(current_theme_supports('hermes-js-to-footer'))
             add_action('wp_enqueue_scripts', [&$this, 'js_to_footer']);
 
+        if(current_theme_supports('hermes-remove-block_styles'))
+            add_action('wp_enqueue_scripts', [&$this, 'remove_block_styles']);
+
     }
 
-    function remove_asset_version($src)
+    public function remove_block_styles()
+    {
+
+        wp_dequeue_style( 'wp-block-library' );
+        wp_dequeue_style( 'wp-block-library-theme' );
+
+    }
+
+    public function remove_asset_version($src)
     {
 
         return $src ? esc_url(remove_query_arg('ver', $src)) : false;

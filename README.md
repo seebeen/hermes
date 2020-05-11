@@ -25,7 +25,7 @@ In your `composer.json`
 ```json
 {
     "require": {
-        "sgi/hermes": "1.0"
+        "sgi/hermes": "1.1"
     }
 }
 ```
@@ -58,6 +58,9 @@ You need to add theme support for hermes sub-modules in your theme.
 * **Disable trackbacks**  
   `add_theme_support('hermes-disable-trackbacks');`
 
+  * **Remove Block Styles**  
+  `add_theme_support('hermes-remove-block_styles');`
+
 * **Disable asset versioning**  
   `add_theme_support('hermes-disable-asset-versioning');`
 
@@ -80,6 +83,7 @@ And in a format you can paste to your theme:
 add_theme_support('hermes-cleanup');
 add_theme_support('hermes-disable-trackbacks');
 add_theme_support('hermes-disable-asset-versioning');
+add_theme_support('hermes-remove-block_styles');
 add_theme_support('hermes-js-to-footer');
 add_theme_support('hermes-relative-urls');
 add_theme_support('hermes-use-imagick');
