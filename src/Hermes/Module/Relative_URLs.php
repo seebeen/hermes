@@ -12,7 +12,6 @@ class Relative_URLs
         'wp_list_categories',
         'wp_get_attachment_url',
         'the_content_more_link',
-        'post_link',
         'the_tags',
         'get_pagenum_link',
         'get_comment_link',
@@ -24,7 +23,7 @@ class Relative_URLs
         'script_loader_src',
         'style_loader_src',
         'theme_file_uri',
-        'parent_theme_file_uri'
+        'parent_theme_file_uri',
     ];
 
     public function __construct()
@@ -57,20 +56,29 @@ class Relative_URLs
     public function make_relative_url($input)
     {
 
-        if(is_feed())
+        if (is_feed())
             return $input;
+        
 
-        preg_match('|https?://([^/]+)(/.*)|i', $input, $matches);
+        $url = parse_url($input);
 
-        if (isset($matches[1]) && isset($matches[2]) && $matches[1] === $_SERVER['SERVER_NAME']) :
-            
+        if (!isset($url['host']) || !isset($url['path']))
+            return $input;
+        
+        $site_url = parse_url(network_home_url());  // falls back to home_url
+
+        if (!isset($url['scheme']))
+            $url['scheme'] = $site_url['scheme'];
+        
+        $hosts_match = $site_url['host'] === $url['host'];
+        $schemes_match = $site_url['scheme'] === $url['scheme'];
+        $ports_exist = isset($site_url['port']) && isset($url['port']);
+        $ports_match = ($ports_exist) ? $site_url['port'] === $url['port'] : true;
+
+        if ($hosts_match && $schemes_match && $ports_match)
             return wp_make_link_relative($input);
-
-        else :
-
-            return $input;
-
-        endif;
+        
+        return $input;
 
     }
 
